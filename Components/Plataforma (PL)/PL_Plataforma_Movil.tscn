@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bny0bi3ovby47"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Plataforma_Movil.gd" id="1_pirwg"]
+[ext_resource type="Texture2D" uid="uid://bbl1fiecaseuw" path="res://Sprites/Movil_Platform_01.png" id="3_4abu5"]
+
+[sub_resource type="Curve2D" id="Curve2D_0rmba"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr285"]
+size = Vector2(48, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duf5p"]
+size = Vector2(48, 10)
+
+[node name="Plataforma_Movil" type="Path2D"]
+curve = SubResource("Curve2D_0rmba")
+script = ExtResource("1_pirwg")
+metadata/_edit_group_ = true
+
+[node name="Seguidor_Ruta" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Area_Plataforma" type="Area2D" parent="Seguidor_Ruta"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="Collider_Area_Plataforma" type="CollisionShape2D" parent="Seguidor_Ruta/Area_Plataforma"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_fr285")
+debug_color = Color(0.727047, 0.473119, 0.11924, 0.42)
+
+[node name="Plataforma" type="StaticBody2D" parent="Seguidor_Ruta"]
+collision_mask = 2
+
+[node name="Sprite_Plataforma" type="Sprite2D" parent="Seguidor_Ruta/Plataforma"]
+texture_filter = 1
+texture = ExtResource("3_4abu5")
+
+[node name="Collider_Plataforma" type="CollisionShape2D" parent="Seguidor_Ruta/Plataforma"]
+shape = SubResource("RectangleShape2D_duf5p")
+one_way_collision = true
+
+[connection signal="body_entered" from="Seguidor_Ruta/Area_Plataforma" to="." method="_on_area_plataforma_body_entered"]
+[connection signal="body_exited" from="Seguidor_Ruta/Area_Plataforma" to="." method="_on_area_plataforma_body_exited"]

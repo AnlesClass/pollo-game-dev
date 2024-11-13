@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbpjr6f10u5jc"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Dead_Zone.gd" id="1_p7lxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvtli"]
+resource_local_to_scene = true
+size = Vector2(59, 40)
+
+[node name="Dead_Zone" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_p7lxe")
+metadata/_edit_group_ = true
+
+[node name="Dead_Zone_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kvtli")
+debug_color = Color(0.911412, 0.257174, 0.379588, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

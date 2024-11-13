@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjosm0hafjqb1"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Puerta_Barras.gd" id="1_5f7gb"]
+[ext_resource type="Texture2D" uid="uid://chc3q2hjd2rm0" path="res://Sprites/PL_Door_001.png" id="2_7nd5q"]
+[ext_resource type="Texture2D" uid="uid://dcagxdlpnsonw" path="res://Sprites/PL_Door_002.png" id="2_h4jmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqixy"]
+size = Vector2(16, 47.9272)
+
+[node name="Puerta_Barras" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_5f7gb")
+texture = ExtResource("2_h4jmo")
+metadata/_edit_group_ = true
+
+[node name="Collider_Puerta_Barras" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_vqixy")
+
+[node name="Sprite_Puerta_Barras" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 24)
+texture = ExtResource("2_7nd5q")

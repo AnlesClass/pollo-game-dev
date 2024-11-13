@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsyv51f3kac0"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Cambio_Escena.gd" id="1_ng1n7"]
+[ext_resource type="Texture2D" uid="uid://cgxlv7ddy28tb" path="res://Sprites/PL_Dialog_Placeholder.png" id="2_ps23r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ngk57"]
+
+[node name="Cambio_Escena" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ng1n7")
+metadata/_edit_group_ = true
+
+[node name="Collider_Cambio_Escena" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ngk57")
+
+[node name="Sprite_Cambio_Escena" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ps23r")

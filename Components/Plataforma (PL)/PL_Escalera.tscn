@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8wsiq2je0ta7"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Escalera.gd" id="1_3826i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhate"]
+size = Vector2(16, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlooi"]
+size = Vector2(16, 0.5)
+
+[node name="Escalera" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_3826i")
+
+[node name="Escalera_Collider" type="CollisionShape2D" parent="."]
+position = Vector2(8, -7.75)
+shape = SubResource("RectangleShape2D_fhate")
+
+[node name="Escalera_Top" type="StaticBody2D" parent="."]
+
+[node name="Escalera_Top_Collider" type="CollisionShape2D" parent="Escalera_Top"]
+position = Vector2(8, -15.75)
+shape = SubResource("RectangleShape2D_wlooi")
+one_way_collision = true
+debug_color = Color(0.666667, 0.509804, 0.117647, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

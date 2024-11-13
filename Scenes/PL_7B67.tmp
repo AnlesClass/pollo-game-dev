@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpfomeqd51pld"]
+
+[ext_resource type="Texture2D" uid="uid://behsn0g1jewmu" path="res://Sprites/PL_Concepto.png" id="1_bxtnl"]
+[ext_resource type="Script" path="res://Scenes/PL_Scene_Controller.gd" id="1_o7wc5"]
+[ext_resource type="PackedScene" uid="uid://b2hkux3yljunk" path="res://Components/Plataforma (PL)/PL_Player.tscn" id="2_1j1q3"]
+[ext_resource type="TileSet" uid="uid://clhvroj2c5oxk" path="res://Resources/PL_Tileset.tres" id="3_hbkmh"]
+[ext_resource type="Script" path="res://Scenes/PL_Escalera.gd" id="4_fobr3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhate"]
+size = Vector2(18, 65)
+
+[node name="ScenePlataformero" type="Node2D"]
+script = ExtResource("1_o7wc5")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(300, 50)
+texture = ExtResource("1_bxtnl")
+metadata/_edit_lock_ = true
+
+[node name="PL_Player" parent="." instance=ExtResource("2_1j1q3")]
+position = Vector2(34, 448)
+
+[node name="SP_Tilemap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+tile_set = ExtResource("3_hbkmh")
+format = 2
+layer_0/tile_data = PackedInt32Array(1966098, 524289, 2, 1966099, 524289, 2, 1966100, 524289, 2, 1966101, 524289, 2, 1966102, 524289, 2, 1966103, 524289, 2, 1966104, 524289, 2, 1900569, 458753, 3, 1769498, 524289, 2, 1769499, 524289, 2, 1835033, 458753, 3, 1900568, 589825, 1, 1900567, 524289, 1, 1966080, 524289, 2, 1966081, 524289, 2, 1966082, 524289, 2, 2031616, 524289, 3, 2031617, 524289, 3, 2031618, 524289, 3, 1441803, 655361, 4, 1376267, 655361, 3, 1310731, 655361, 3, 1245195, 655361, 3, 1179659, 655361, 3, 1114123, 655361, 2, 1769497, 458753, 2, 1376262, 458753, 1, 1441798, 458753, 1, 1507340, 524289, 2, 1507339, 524289, 2, 1507338, 524289, 2, 1507337, 524289, 2, 1507336, 524289, 2, 1507335, 524289, 2, 1507334, 524289, 2, 1507333, 524289, 2, 1507332, 524289, 2, 1507331, 524289, 2, 1966083, 524289, 2, 1966084, 524289, 2, 1966085, 524289, 2, 1966086, 524289, 2, 1966087, 524289, 2, 1966088, 524289, 2, 1966089, 524289, 2, 1966090, 524289, 2, 1966091, 524289, 2, 1966092, 524289, 2, 1966093, 524289, 2, 1966094, 524289, 2, 1966095, 524289, 2, 1966096, 524289, 2, 1966097, 524289, 2, 1900565, 524289, 2, 1835030, 524289, 2, 1769495, 524289, 2, 1769496, 524289, 2, 1835017, 655361, 3, 1900553, 655361, 4, 1769481, 655361, 3, 1703945, 655361, 2)
+
+[node name="Escalera" type="Area2D" parent="."]
+script = ExtResource("4_fobr3")
+node_name = "PL_Player"
+
+[node name="Escalera_Colision" type="CollisionShape2D" parent="Escalera"]
+position = Vector2(152, 446.5)
+shape = SubResource("RectangleShape2D_fhate")
+
+[connection signal="body_entered" from="Escalera" to="Escalera" method="_on_body_entered"]
+[connection signal="body_exited" from="Escalera" to="Escalera" method="_on_body_exited"]

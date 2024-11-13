@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://h54bs5jrc3s1"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Event_Move_Camera.gd" id="1_6nfsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvxh3"]
+size = Vector2(8, 48)
+
+[node name="Event_Move_Camera" type="Area2D"]
+position = Vector2(1790, 506)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_6nfsl")
+target_position = Vector2(1940, 510)
+metadata/_edit_group_ = true
+
+[node name="Trigger" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mvxh3")
+debug_color = Color(0.902039, 0.000158254, 0.757574, 0.42)

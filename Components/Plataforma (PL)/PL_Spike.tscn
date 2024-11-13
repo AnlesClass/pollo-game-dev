@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnf7in6jl78pn"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Espina.gd" id="1_vj0tc"]
+[ext_resource type="Texture2D" uid="uid://bwud2eiak2o35" path="res://Sprites/PL_Espina.png" id="2_72v41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrval"]
+size = Vector2(6, 9)
+
+[node name="Espina" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_vj0tc")
+metadata/_edit_group_ = true
+
+[node name="Colision_Espina" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_jrval")
+
+[node name="Sprite_Espina" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_72v41")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

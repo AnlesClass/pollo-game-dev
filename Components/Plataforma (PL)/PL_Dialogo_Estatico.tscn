@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbvesn5hwonuy"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Dialogo_Estatico.gd" id="1_y2mdj"]
+[ext_resource type="Texture2D" uid="uid://cimsj615trahb" path="res://Sprites/PL_Cartel.png" id="2_nodc4"]
+[ext_resource type="Texture2D" uid="uid://caylfb8j5xx6c" path="res://Sprites/PL_NPC_Marker.png" id="3_mos3i"]
+[ext_resource type="Texture2D" uid="uid://cgxlv7ddy28tb" path="res://Sprites/PL_Dialog_Placeholder.png" id="4_y4xmv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ruc37"]
+radius = 8.0
+
+[node name="Dialogo_Estatico" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_y2mdj")
+message = "<Mensaje de Dialogo>"
+texture2D = ExtResource("2_nodc4")
+flip_h = true
+metadata/_edit_group_ = true
+
+[node name="NPC_Marker" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("3_mos3i")
+
+[node name="NPC_Sprite" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("4_y4xmv")
+
+[node name="NPC_Colision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_ruc37")
+debug_color = Color(0.772008, 0.441704, 0.098376, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

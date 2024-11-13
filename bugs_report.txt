@@ -1,0 +1,15 @@
+## EN ESTA SECCIÓN SE REPORTARÁN TODOS LOS BUGS QUE SE ENCUENTREN.
+
+#01 - SUCEDE MENOS, pero NO está CORREGIDO
+- Hay un bug al mantener presionado espacio mientras se camina hacia
+la izquierda o derecha sobre una plataforma, en algunas ocasiones el jugador
+se queda adherido a la plataforma, lo que provoca que aunque ya no se esté parado
+encima se sigue aplicando una velocidad horizontal.
+
+#02 - NO ESTÁ CORREGIDO
+- El sapo a veces choca contra el techo y se queda saltando verticalmente.
+
+## ESTÁNDARES
+- Las velocidades se expresan en 3 dígitos y se multiplican por uno de 2 dígitos
+, por ejemplo, el player tiene una velocidad de 100 * 60, casi siempre se multiplica
+por 60, por lo que aquí es ESTÁNDAR.

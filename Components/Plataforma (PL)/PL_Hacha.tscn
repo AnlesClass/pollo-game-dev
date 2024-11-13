@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://0xnmunsnw8et"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Hacha.gd" id="1_1kqoy"]
+[ext_resource type="Texture2D" uid="uid://bembijxsnjlk6" path="res://Sprites/PL_Hacha_Mango.png" id="2_51rcu"]
+[ext_resource type="Texture2D" uid="uid://x2mtaqdkgvqu" path="res://Sprites/PL_Hacha_Filo.png" id="3_r5r33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo43f"]
+size = Vector2(34, 17)
+
+[node name="Hacha" type="Node2D"]
+position = Vector2(352, 278)
+script = ExtResource("1_1kqoy")
+
+[node name="Hacha_Mango_Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.007, 29.49)
+texture = ExtResource("2_51rcu")
+
+[node name="Hacha_Filo" type="Area2D" parent="."]
+position = Vector2(-0.5438, 68.0476)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Hacha_Filo_Sprite" type="Sprite2D" parent="Hacha_Filo"]
+texture_filter = 1
+position = Vector2(0.5438, -2.04762)
+texture = ExtResource("3_r5r33")
+
+[node name="Hacha_Filo_Collider" type="CollisionShape2D" parent="Hacha_Filo"]
+position = Vector2(0.543793, -2.54761)
+shape = SubResource("RectangleShape2D_eo43f")
+
+[connection signal="body_entered" from="Hacha_Filo" to="." method="_on_hacha_filo_body_entered"]

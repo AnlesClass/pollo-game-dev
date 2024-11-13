@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2hkux3yljunk"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Player.gd" id="1_rv47e"]
+[ext_resource type="SpriteFrames" uid="uid://cuabkdu7s3shx" path="res://Resources/PL_Player_Animation.tres" id="3_mlc6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wadew"]
+size = Vector2(20, 24)
+
+[node name="PL_Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 25
+script = ExtResource("1_rv47e")
+metadata/_edit_group_ = true
+
+[node name="PL_Camera" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+limit_left = -16
+limit_top = -400
+limit_right = 600
+limit_bottom = 500
+
+[node name="PL_Audio" type="AudioStreamPlayer2D" parent="."]
+volume_db = -5.0
+
+[node name="PL_Sprite_Animated" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("3_mlc6n")
+animation = &"idle"
+
+[node name="PL_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wadew")

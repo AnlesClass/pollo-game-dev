@@ -1,0 +1,9 @@
+01. Paloma a la que te puedas montar y empezar a volar.
+- La paloma debe poder alternar su estado entre estar parada sobre una superficie
+o volando.
+- Cuando se está sobre la superficie puede caminar y saltar.
+- Para activar el modo vuelo se debe saltar y, en el aire, volver a presionar
+la tecla espacio.
+- En modo vuelo la paloma empezará a perder altura mientras aletea (animación)
+- Para ganar altura se deberá presionar espacio en el aire (en modo vuelo), la
+paloma ganará una breve aceleración vertical.

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnn7vioaxqmo0"]
+
+[ext_resource type="Script" path="res://Components/Main (MN)/Scripts/MN_Player_Character01.gd" id="1_jmkw7"]
+[ext_resource type="Texture2D" uid="uid://bbyamklxj236m" path="res://Tests/Test_Player.png" id="2_dauvr"]
+[ext_resource type="SpriteFrames" uid="uid://doo4fn6t63cp5" path="res://Resources/TD_Animation01.tres" id="3_0fem5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rig1"]
+size = Vector2(60, 60)
+
+[node name="Player_Body" type="CharacterBody2D"]
+script = ExtResource("1_jmkw7")
+
+[node name="Player_Camera" type="Camera2D" parent="."]
+
+[node name="Player_Sprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_dauvr")
+
+[node name="Player_Sprite_Animated" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("3_0fem5")
+animation = &"look_down"
+frame_progress = 0.732484
+
+[node name="Player_Raycast" type="RayCast2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2rig1")
+
+[node name="Debug_Line" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 50)
+width = 3.0
+default_color = Color(0.886275, 0.54902, 0.215686, 1)

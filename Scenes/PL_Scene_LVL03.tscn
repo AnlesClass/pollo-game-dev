@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=4 uid="uid://bavaq80mmp58s"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Gui_Vida.gd" id="1_0jl0u"]
+[ext_resource type="Texture2D" uid="uid://dtdutkkbn5vtl" path="res://Sprites/PL_Health_01.png" id="2_2dnaf"]
+[ext_resource type="Texture2D" uid="uid://ddssabvc1sdkq" path="res://Sprites/PL_Health_02.png" id="3_hugyk"]
+[ext_resource type="TileSet" uid="uid://clhvroj2c5oxk" path="res://Resources/PL_Tileset.tres" id="3_t51b4"]
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Player.gd" id="4_l1k3r"]
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_GUI_Dialogo.gd" id="4_urs4p"]
+[ext_resource type="Texture2D" uid="uid://marwklskqb3j" path="res://Sprites/PL_Dialog_Background.png" id="5_k351a"]
+[ext_resource type="SpriteFrames" uid="uid://cuabkdu7s3shx" path="res://Resources/PL_Player_Animation.tres" id="5_kgw37"]
+[ext_resource type="Texture2D" uid="uid://44e57sry6xcy" path="res://Sprites/PL_Apple.png" id="6_jm46w"]
+[ext_resource type="FontFile" uid="uid://dvb35cqp6jsp8" path="res://Resources/Fonts/Minecraft.ttf" id="7_5y2n4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mvxy"]
+size = Vector2(20, 24)
+
+[node name="PlSceneLvl03" type="Node2D"]
+
+[node name="GUI_Vida" type="CanvasLayer" parent="."]
+script = ExtResource("1_0jl0u")
+texture_health = ExtResource("2_2dnaf")
+texture_without_health = ExtResource("3_hugyk")
+
+[node name="Container_Vida" type="HBoxContainer" parent="GUI_Vida"]
+layout_direction = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 358.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = -456.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Texture_Vida_01" type="TextureRect" parent="GUI_Vida/Container_Vida"]
+texture_filter = 1
+layout_mode = 2
+expand_mode = 3
+
+[node name="Texture_Vida_02" type="TextureRect" parent="GUI_Vida/Container_Vida"]
+texture_filter = 1
+layout_mode = 2
+expand_mode = 3
+
+[node name="Texture_Vida_03" type="TextureRect" parent="GUI_Vida/Container_Vida"]
+texture_filter = 1
+layout_mode = 2
+expand_mode = 3
+
+[node name="GUI_Dialogo" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("4_urs4p")
+
+[node name="Panel_Dialogo" type="Panel" parent="GUI_Dialogo"]
+clip_contents = true
+offset_left = 25.0
+offset_top = 325.0
+offset_right = 475.0
+offset_bottom = 485.0
+pivot_offset = Vector2(225, 80)
+metadata/_edit_lock_ = true
+
+[node name="Sprite_Background" type="Sprite2D" parent="GUI_Dialogo/Panel_Dialogo"]
+texture_filter = 1
+position = Vector2(225, 80)
+texture = ExtResource("5_k351a")
+
+[node name="Sprite_Content" type="Sprite2D" parent="GUI_Dialogo/Panel_Dialogo"]
+texture_filter = 1
+position = Vector2(426, 134)
+scale = Vector2(1.83333, 1.83333)
+texture = ExtResource("6_jm46w")
+
+[node name="Label_Content" type="Label" parent="GUI_Dialogo/Panel_Dialogo"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 440.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.0627451, 0.054902, 0.0901961, 1)
+theme_override_colors/font_shadow_color = Color(0.670588, 0.631373, 0.529412, 1)
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_5y2n4")
+theme_override_font_sizes/font_size = 16
+text = "<Mensaje Vacio>"
+autowrap_mode = 3
+clip_text = true
+
+[node name="TileMapLayer_Decorations" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_set = ExtResource("3_t51b4")
+
+[node name="TileMapLayer_Terrain" type="TileMapLayer" parent="."]
+texture_filter = 1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAB4AAQAMAAIAAAABAB4AAQAMAAIAAAACAB4AAQAMAAIAAAADAB4AAQAMAAIAAAAEAB4AAQAMAAIAAAAFAB4AAQAMAAIAAAAGAB0AAQARAAMAAAAHAB0AAQAMAAIAAAAIABwAAQARAAMAAAAJABwAAQAPAAYAAAAIAB0AAQANAAIAAAAGAB4AAQANAAIAAAAHAB4AAQAJAAIAAAAIAB4AAQAJAAIAAAAJAB4AAQAJAAIAAAAJAB0AAQAJAAIAAAAJAB8AAQAMAAAAAAAAAB8AAQAMAAAAAAABAB8AAQAMAAAAAAACAB8AAQAMAAAAAAADAB8AAQAMAAAAAAAEAB8AAQAMAAAAAAAFAB8AAQAMAAAAAAAGAB8AAQAMAAAAAAAHAB8AAQAMAAAAAAAIAB8AAQAMAAAAAAALABsAAQARAAUAAAAKABsAAQAQAAUAAAAJABsAAQAPAAUAAAAKABwAAQAJAAIAAAALABwAAQAJAAIAAAALAB0AAQAJAAIAAAAKAB0AAQAJAAIAAAAKAB4AAQAJAAIAAAALAB4AAQAJAAIAAAALAB8AAQAMAAAAAAAKAB8AAQAMAAAAAAAMAB8AAQASAAQAAAAMABsAAQASAAMAAAAMAB4AAQALAAEAAAAMAB0AAQALAAEAAAAMABwAAQALAAEAAAD//x0AAQAPAAcAABD+/x0AAQAQAAcAABD9/x0AAQAMAAIAAAD8/x0AAQARAAMAAAD8/x4AAQANAAEAAAD8/x8AAQARAAQAAAD9/x4AAQAJAAIAAAD9/x8AAQAMAAAAAAD+/x8AAQAMAAAAAAD//x8AAQAMAAAAAAD//x4AAQAPAAgAABD+/x4AAQAJAAIAAAA=")
+tile_set = ExtResource("3_t51b4")
+
+[node name="PL_Player" type="CharacterBody2D" parent="."]
+position = Vector2(16, 466)
+collision_layer = 2
+collision_mask = 25
+script = ExtResource("4_l1k3r")
+metadata/_edit_group_ = true
+
+[node name="PL_Camera" type="Camera2D" parent="PL_Player"]
+zoom = Vector2(2.5, 2.5)
+
+[node name="PL_Audio" type="AudioStreamPlayer2D" parent="PL_Player"]
+volume_db = -5.0
+
+[node name="PL_Sprite_Animated" type="AnimatedSprite2D" parent="PL_Player"]
+texture_filter = 1
+sprite_frames = ExtResource("5_kgw37")
+animation = &"idle"
+
+[node name="PL_Collision" type="CollisionShape2D" parent="PL_Player"]
+shape = SubResource("RectangleShape2D_1mvxy")

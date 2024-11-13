@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://1tpnuwje6g2u"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Key.gd" id="1_yhltb"]
+[ext_resource type="Texture2D" uid="uid://dqc06vp0wcgb8" path="res://Sprites/PL_Key.png" id="2_iccuv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sli7"]
+size = Vector2(16.0219, 16)
+
+[node name="Key" type="Node2D"]
+script = ExtResource("1_yhltb")
+metadata/_edit_group_ = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+rotation = -3.14159
+
+[node name="Area_Key" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="Collision_Key" type="CollisionShape2D" parent="Area_Key"]
+shape = SubResource("RectangleShape2D_4sli7")
+
+[node name="Sprite_Key" type="Sprite2D" parent="Area_Key"]
+texture_filter = 1
+texture = ExtResource("2_iccuv")
+
+[connection signal="body_entered" from="Area_Key" to="." method="_on_area_key_body_entered"]
