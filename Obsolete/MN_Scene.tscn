@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgjy2kwpc8dqb"]
+
+[ext_resource type="TileSet" uid="uid://clhvroj2c5oxk" path="res://Resources/PL_Tileset.tres" id="1_jgruv"]
+[ext_resource type="PackedScene" uid="uid://dnn7vioaxqmo0" path="res://Obsolete/Main (MN)/MN_Player.tscn" id="2_slsv4"]
+
+[node name="Scene001" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_set = ExtResource("1_jgruv")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("2_slsv4")]
+position = Vector2(250, 250)
+metadata/_edit_group_ = true
+
+[editable path="Player"]

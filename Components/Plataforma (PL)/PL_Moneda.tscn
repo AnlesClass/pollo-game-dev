@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxj2o5o61fcvy"]
+
+[ext_resource type="SpriteFrames" uid="uid://b351hr23txcks" path="res://Resources/PL_Moneda.tres" id="1_6fpwt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1aga"]
+radius = 4.58688
+height = 13.7119
+
+[node name="Moneda" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="Moneda_Animated" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("1_6fpwt")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.944914
+
+[node name="Moneda_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_l1aga")

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Proyecto_Videojuego_Upsjb"
-run/main_scene="res://Scenes/PL_Scene_LVL02.tscn"
+run/main_scene="res://Scenes/PL_GUI_Titulo.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+LoadScreen="*res://Components/Plataforma (PL)/Scripts-Singletons/LoadScreen.gd"
 
 [display]
 

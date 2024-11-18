@@ -1,6 +1,8 @@
 extends Area2D
 
-@export var new_scene : PackedScene
+@export_file('*.tscn') var new_scene
+var load_bar_scene = load("res://Scenes/PL_GUI_Bar_Progress.tscn")
+
 var can_change_scene : bool = false
 
 func _ready() -> void:
@@ -13,7 +15,7 @@ func _input(_event: InputEvent) -> void:
 	if not new_scene : return
 	# CAMBIAR de escena si se pulsa el botón y se encuentra en el área especificada.
 	if can_change_scene and Input.is_action_just_released("interact"):
-		get_tree().call_deferred("change_scene_to_packed", new_scene)
+		LoadScreen.call_deferred("change_and_prepare_scene", load_bar_scene, new_scene)
 
 # SEÑAL: Cuando el jugador entra.
 func on_body_entered(body : Node2D) -> void:

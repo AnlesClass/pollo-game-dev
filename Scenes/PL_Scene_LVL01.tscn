@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cpfomeqd51pld"]
+[gd_scene load_steps=28 format=4 uid="uid://cpfomeqd51pld"]
 
 [ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Gui_Vida.gd" id="1_w6d16"]
 [ext_resource type="Texture2D" uid="uid://dtdutkkbn5vtl" path="res://Sprites/PL_Health_01.png" id="2_v18ra"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dsyv51f3kac0" path="res://Components/Plataforma (PL)/PL_Cambio_Escena.tscn" id="22_a2f67"]
 [ext_resource type="PackedScene" uid="uid://dnf7in6jl78pn" path="res://Components/Plataforma (PL)/PL_Spike.tscn" id="22_x7o4a"]
 [ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_Paloma.gd" id="23_2x0bl"]
-[ext_resource type="PackedScene" uid="uid://dulmkpj3ytkav" path="res://Scenes/PL_Scene_LVL02.tscn" id="23_tghe2"]
 [ext_resource type="SpriteFrames" uid="uid://dhlfmtphsnc0a" path="res://Resources/PL_Paloma_Animation.tres" id="24_6jbqu"]
 [ext_resource type="Texture2D" uid="uid://cgqff56t1uajk" path="res://Sprites/PL_Paloma_Fly_1.png" id="25_k4104"]
 [ext_resource type="PackedScene" uid="uid://b2hkux3yljunk" path="res://Components/Plataforma (PL)/PL_Player.tscn" id="26_jlka6"]
@@ -232,8 +231,8 @@ position = Vector2(328, -136)
 width = 2
 
 [node name="Cambio_Escena" parent="." instance=ExtResource("22_a2f67")]
-position = Vector2(303, -169)
-new_scene = ExtResource("23_tghe2")
+position = Vector2(96, 435)
+new_scene = "res://Scenes/PL_Scene_LVL02.tscn"
 
 [node name="Paloma" type="CharacterBody2D" parent="."]
 position = Vector2(108.4, -158.91)
@@ -262,7 +261,7 @@ shape = SubResource("CircleShape2D_nv7mm")
 debug_color = Color(0.911412, 0.257174, 0.379588, 0.42)
 
 [node name="PL_Player" parent="Paloma" instance=ExtResource("26_jlka6")]
-position = Vector2(134.544, 8.55486)
+position = Vector2(-83.244, 611.171)
 
 [connection signal="body_entered" from="Paloma/Talk_Box" to="Paloma" method="_on_talk_box_body_entered"]
 [connection signal="body_exited" from="Paloma/Talk_Box" to="Paloma" method="_on_talk_box_body_exited"]

@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b351hr23txcks"]
+
+[ext_resource type="Texture2D" uid="uid://bd4qv8lycq5fw" path="res://Sprites/Moneda_Anim1.png" id="1_a8u6q"]
+[ext_resource type="Texture2D" uid="uid://dpwelgtgumwml" path="res://Sprites/Moneda_Anim2.png" id="2_0dk62"]
+[ext_resource type="Texture2D" uid="uid://11y24i70li51" path="res://Sprites/Moneda_Anim3.png" id="3_wac0j"]
+[ext_resource type="Texture2D" uid="uid://dtheqhyb2xxd" path="res://Sprites/Moneda_Anim4.png" id="4_0eljf"]
+[ext_resource type="Texture2D" uid="uid://b5c5wi3e66k78" path="res://Sprites/Moneda_Anim5.png" id="5_28ruh"]
+[ext_resource type="Texture2D" uid="uid://tajlpk7jkrqo" path="res://Sprites/Moneda_Anim6.png" id="6_xihry"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a8u6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0dk62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wac0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0eljf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_28ruh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xihry")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

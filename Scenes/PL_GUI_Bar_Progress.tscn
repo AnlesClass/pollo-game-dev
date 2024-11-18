@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://t04oae86tn8u"]
+
+[ext_resource type="Script" path="res://Components/Plataforma (PL)/Scripts/PL_GUI_Bar_Progress.gd" id="1_fwue2"]
+[ext_resource type="FontFile" uid="uid://dvb35cqp6jsp8" path="res://Resources/Fonts/Minecraft.ttf" id="2_1ex80"]
+
+[node name="PlGuiLoadScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwue2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+
+[node name="Mensaje" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 0
+offset_left = 149.0
+offset_top = 231.0
+offset_right = 343.0
+offset_bottom = 254.0
+theme_override_fonts/font = ExtResource("2_1ex80")
+text = "Cargando Siguiente Nivel"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.537754, 0.562811, 0.190281, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 106.0
+offset_top = 260.0
+offset_right = -106.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1ex80")

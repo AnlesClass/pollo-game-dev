@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crru4uj7bhha2"
-path="res://.godot/imported/PL_Mountain_01.png-8d980264bfe8b62b05cad3410d8b0a2a.ctex"
+uid="uid://docck63ae1m1k"
+path="res://.godot/imported/Logo_Run_Chicken_Run.png-2475033307eb6d6c14f88228f5b6a356.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PL_Mountain_01.png"
-dest_files=["res://.godot/imported/PL_Mountain_01.png-8d980264bfe8b62b05cad3410d8b0a2a.ctex"]
+source_file="res://Sprites/Logo_Run_Chicken_Run.png"
+dest_files=["res://.godot/imported/Logo_Run_Chicken_Run.png-2475033307eb6d6c14f88228f5b6a356.ctex"]
 
 [params]
 

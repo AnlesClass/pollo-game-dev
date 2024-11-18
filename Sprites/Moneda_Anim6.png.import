@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crru4uj7bhha2"
-path="res://.godot/imported/PL_Mountain_01.png-8d980264bfe8b62b05cad3410d8b0a2a.ctex"
+uid="uid://tajlpk7jkrqo"
+path="res://.godot/imported/Moneda_Anim6.png-35242fe782602738c5a8d789aa6b463d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PL_Mountain_01.png"
-dest_files=["res://.godot/imported/PL_Mountain_01.png-8d980264bfe8b62b05cad3410d8b0a2a.ctex"]
+source_file="res://Sprites/Moneda_Anim6.png"
+dest_files=["res://.godot/imported/Moneda_Anim6.png-35242fe782602738c5a8d789aa6b463d.ctex"]
 
 [params]
 
